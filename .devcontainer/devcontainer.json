@@ -1,22 +1,24 @@
 {
-    "name": "DSP Voice Classification",
-    "image": "mcr.microsoft.com/devcontainers/python:3.9",
-    "features": {
-        "ghcr.io/devcontainers/features/python:1": {
-            "version": "3.9"
-        }
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-python.python",
-                "ms-python.vscode-pylance"
-            ]
-        }
-    },
-    "postCreateCommand": "pip install -r requirements.txt",
-    "mounts": [
-        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-    ],
-    "workspaceFolder": "/workspace"
+  "name": "DSP Voice Classification",
+  "image": "mcr.microsoft.com/devcontainers/python:3.9",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.9"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "mounts": [
+    // bind your local project into the same path inside the container
+    "source=${localWorkspaceFolder},target=/workspaces/DSP_Voice_Classification_Project,type=bind,consistency=cached"
+  ],
+  // set VS Code’s working directory to the actual project location
+  "workspaceFolder": "/workspaces/DSP_Voice_Classification_Project"
 }
